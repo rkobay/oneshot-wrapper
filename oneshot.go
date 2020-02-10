@@ -7,13 +7,17 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+type Params struct {
+	Index      string `yaml: "index"`
+	Sourcetype string `yaml: "sourcetype"`
+	Source     string `yaml: "source"`
+	Path       string `yaml: "path"`
+}
+
 type DataGroup struct {
 	Name        string `yaml: "name"`
 	Description string `yaml: "description"`
-	Index       string `yaml: "index"`
-	Sourcetype  string `yaml: "sourcetype"`
-	Source      string `yaml: "source"`
-	Path        string `yaml: "path"`
+	Params      Params `struct: "Params"`
 }
 
 func main() {
@@ -33,6 +37,6 @@ func main() {
 	for _, dg := range dgs {
 		fmt.Printf(
 			"add oneshot -index %s -sourcetype %s -source %s %s\n",
-			dg.Index, dg.Sourcetype, dg.Source, dg.Path)
+			dg.Params.Index, dg.Params.Sourcetype, dg.Params.Source, dg.Params.Path)
 	}
 }

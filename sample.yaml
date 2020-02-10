@@ -1,12 +1,14 @@
-- name: sampe_01
+- name: sample_01
   description: "sample datagroup 01"
-  index: sample
-  sourcetype: sample
-  source: sample
-  path: sample_01.log
-- name: sampe_02
+  params:
+    index: sample
+    sourcetype: sample
+    source: sample
+    path: sample_01.log
+- name: sample_02
   description: "sample datagroup 02"
-  index: sample
-  sourcetype: sample
-  source: sample
-  path: sample_02.log
+  params:
+    index: sample
+    sourcetype: sample
+    source: sample
+    path: sample_02.log
